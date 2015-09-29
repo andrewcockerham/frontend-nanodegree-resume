@@ -9,23 +9,22 @@ $("#header").prepend(formattedName);
 // 	"phone" : "11111"
 // }
 
-// var skills =
-// ["programming", "teaching", "engineering"]
-
 var bio = {
 	"name" : "Andrew Cockerham",
 	"role" : "Jack of Some Trades",
 	"contacts" : {
+		"mobile" : "281-250-9006",
 		"email" : "cockerham.andrew at gmail.com",
-		"phone" : "11111",
-		"github": "mygit",
-		"location": "Austin"
+		"github": "https://github.com/andrewcockerham",
+		"twitter": "https://twitter.com/cockerhamAndrew",
+		"location": "Austin, TX"
 	},
-	"bioPic" : "images/me.jpg",
 	"welcomeMessage" : "welcome",
 	"skills" : [
 		"programming", "teaching", "engineering"
-	]
+	],
+	"bioPic" : "images/me.jpg",
+	"display" : function() {}
 }
 
 var work = {
