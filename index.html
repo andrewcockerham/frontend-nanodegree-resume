@@ -95,7 +95,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
   <script type="text/javascript">
   // Notice how all of a sudden there's JavaScript inside this HTML
-  // document? You can write JavaScript between <script> tags. At the end of your 
+  // document? You can write JavaScript between <script> tags. At the end of your
   // JavaScript, don't forget the closing script tag with the slash (/).
 
 
@@ -108,33 +108,46 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   */
   // var x = "hi"
   // var y = "hello"
-  function getRelationship (num1, num2) {
+  // function getRelationship (num1, num2) {
     // var verb = ["is","are"]
-    if (isNaN(num1)) {
-      if (isNaN(num2)) {
-        console.log("Can't compare relationships because "+num1+" and "+num2+" are not numbers.");
-        return
-      } else {
-        console.log("Can't compare relationships because "+num1+" is not a number.")
-      }
-    }
-    if (isNaN(num2)) {
-      console.log("Can't compare relationships because "+num2+" is not a number.")
-    }
-    // if (isNaN(num1) || isNaN(num2)) {
-    //   console.log("Can't compare relationships because "+num1+" and "+num2+" [is]/[are] not [a] number[s].")
-    // } else {
-      if (num1 > num2) {
-        console.log(">");
-      } else if (num1 < num2) {
-        console.log("<");
-      } else {
-        console.log("=");
-      }
-    }
-  
-  getRelationship("3","2");
+  //   if (isNaN(num1)) {
+  //     if (isNaN(num2)) {
+  //       console.log("Can't compare relationships because "+num1+" and "+num2+" are not numbers.");
+  //       return
+  //     } else {
+  //       console.log("Can't compare relationships because "+num1+" is not a number.")
+  //     }
+  //   }
+  //   if (isNaN(num2)) {
+  //     console.log("Can't compare relationships because "+num2+" is not a number.")
+  //   }
+  //   // if (isNaN(num1) || isNaN(num2)) {
+  //   //   console.log("Can't compare relationships because "+num1+" and "+num2+" [is]/[are] not [a] number[s].")
+  //   // } else {
+  //     if (num1 > num2) {
+  //       console.log(">");
+  //     } else if (num1 < num2) {
+  //       console.log("<");
+  //     } else {
+  //       console.log("=");
+  //     }
+  //   }
+
+  // getRelationship("3","2");
   //************
+
+  if (bio.contacts) {
+    // $("#topContacts").append(HTMLcontactGeneric);
+    // var formattedContacts = HTMLcontactGeneric.replace("%data%", bio.contacts.email);
+    // $("#topContacts").append(formattedContacts);
+    // $("#topContacts").append(HTMLemail);
+    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+    $("#topContacts").append(formattedEmail);
+    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+    $("#topContacts").append(formattedGithub);
+    var formattedPhone = HTMLmobile.replace("%data%", bio.contacts.phone);
+    $("#topContacts").append(formattedPhone);
+  }
 
   if (bio.skills.length > 0) {
     $("#header").append(HTMLskillsStart);

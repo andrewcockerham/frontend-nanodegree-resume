@@ -9,7 +9,7 @@ $("#header").prepend(formattedName);
 // 	"phone" : "11111"
 // }
 
-// var skills = 
+// var skills =
 // ["programming", "teaching", "engineering"]
 
 var bio = {
@@ -40,7 +40,7 @@ var work = {
 	{
 		"employer": "EF English First",
 		"title": "Mobile Project Manager",
-		"dates": 2011,
+		"dates": "2011",
 		"location": "Shanghai, China",
 		"description": "English Teacher"
 	},
