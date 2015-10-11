@@ -4,11 +4,6 @@ var formattedRole = HTMLheaderRole.replace("%data%", "Jack of All Trades");
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 
-// var contactInfo = {
-// 	"email" : "cockerham.andrew at gmail.com",
-// 	"phone" : "11111"
-// }
-
 var bio = {
 	"name" : "Andrew Cockerham",
 	"role" : "Jack of Some Trades",
@@ -23,37 +18,36 @@ var bio = {
 	"skills" : [
 		"programming", "teaching", "engineering"
 	],
-	"bioPic" : "images/me.jpg",
-	"display" : function() {}
+	"bioPic" : "images/me.jpg"//,
+	//"display" : function() {}
 }
 
 var work = {
 	"jobs": [
-	{
-		"employer": "EF English First",
-		"title": "English Teacher",
-		"dates": "2009-2010",
-		"location": "Hangzhou and Tianjin, China",
-		"description": "English Teacher"
-	},
-	{
-		"employer": "EF English First",
-		"title": "Mobile Project Manager",
-		"dates": "2011",
-		"location": "Shanghai, China",
-		"description": "English Teacher"
-	},
 	{
 		"employer": "TVA Medical",
 		"title": "Quality Engineer",
 		"dates": "2012-present",
 		"location": "Austin, TX",
 		"description": "complicated"
+	},
+	{
+		"employer": "EF English First",
+		"title": "Mobile Project Manager",
+		"dates": "2011",
+		"location": "Shanghai, China",
+		"description": "iPad app development Project Manager"
+	},
+	{
+		"employer": "EF English First",
+		"title": "English Teacher",
+		"dates": "2009-2010",
+		"location": "Hangzhou and Tianjin, China",
+		"description": "English Teacher"
 	}
 	]
 }
 // var work = {}
-
 // work.position = "Quality Engineer";
 // work.years_worked = "3";
 // work.city = "Austin";
@@ -64,7 +58,6 @@ var work = {
 // education["name"] = "Texas A&M University";
 // education["years_attended"] = "4.5";
 
-// OBJECT LITERAL NOTATION
 var education = {
 	"schools": [
 	{
@@ -73,8 +66,8 @@ var education = {
 		"degree": "BS Engineering",
 		"major": ["Biomedical Engineering"],
 		"minor": "Mathematics",
-		"dates": "2003-2007",
-		"url": "a&m.com"
+		"dates": 2007,
+		"url": "http://www.tamu.edu/"
 	},
 	{
 		"name": "Thailand Oxford English",
@@ -87,9 +80,15 @@ var education = {
 	],
 	"onlineCourses": [
 	{
+		"title": "Front End Web Developer Nanodegree",
+		"school": "Udacity",
+		"date": 2015,
+		"url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+	},
+	{
 		"title": "Intro to Computer Science",
 		"school": "Udacity",
-		"dates": 2013,
+		"date": 2013,
 		"url": "?"
 	}
 	]
@@ -121,23 +120,3 @@ var projects = {
 // $("#main").append(bio.role);
 // $("#main").append(work);
 // $("#main").append(education.name);
-
-// var lightspeedMPS = 299792458
-
-// function convertLight (lightspeedMPS) {
-// 	var lightspeedCPNS = lightspeedMPS * 100 / 1000000000
-// 	return lightspeedCPNS
-// }
-// var awesomeThoughts
-// awesomeThoughts = "I am Andrew and I am AWESOME"
-
-// console.log(awesomeThoughts);
-
-// var funThoughts = awesomeThoughts.replace("AWESOME","FUN");
-// $("#main").append(funThoughts);
-
-// var audacity = "audacity";
-// var udacityTemp = audacity.slice(1);
-// var udacity = udacityTemp.charAt(0).toUpperCase() + udacityTemp.slice(1);
-
-// console.log(udacity);
