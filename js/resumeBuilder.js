@@ -1,8 +1,4 @@
-var formattedName = HTMLheaderName.replace("%data%", "Andrew Cockerham");
-var formattedRole = HTMLheaderRole.replace("%data%", "Jack of All Trades");
 
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
 
 var bio = {
 	"name" : "Andrew Cockerham",
@@ -82,13 +78,13 @@ var education = {
 	{
 		"title": "Front End Web Developer Nanodegree",
 		"school": "Udacity",
-		"date": 2015,
+		"dates": 2015,
 		"url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
 	},
 	{
 		"title": "Intro to Computer Science",
 		"school": "Udacity",
-		"date": 2013,
+		"dates": 2013,
 		"url": "?"
 	}
 	]

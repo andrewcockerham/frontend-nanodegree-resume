@@ -100,12 +100,15 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
 
   // Also, this is a JavaScript style comment. You can comment in JavaScript with:
-
   //   two slashes for all following characters on a single line, or
-
   /*
       an opening and closing set of slash asterisks for block comments.
   */
+  var formattedName = HTMLheaderName.replace("%data%", "Andrew Cockerham");
+  var formattedRole = HTMLheaderRole.replace("%data%", "Jack of All Trades");
+
+  $("#header").prepend(formattedRole);
+  $("#header").prepend(formattedName);
 
   if (bio.contacts) {
     // $("#topContacts").append(HTMLcontactGeneric);
@@ -122,12 +125,24 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
   if (bio.skills.length > 0) {
     $("#header").append(HTMLskillsStart);
-    // document.getElementById("header").append()
-    // HTMLskillsStart.append(HTMLskills);
     var formattedSkill = HTMLskills.replace("%data%", bio.skills[0])
     $("#skills").append(formattedSkill);
     var formattedSkill = HTMLskills.replace("%data%", bio.skills[1])
     $("#skills").append(formattedSkill);
+  }
+
+  for (project in projects.projects) {
+    // var formattedJob = HTMLworkStart.replace("%data%", bio.skills[0])
+    $("#projects").append(HTMLprojectStart)
+    var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+    var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+    var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+    var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].image);
+
+    $(".project-entry:last").append(formattedTitle);
+    $(".project-entry:last").append(formattedDates);
+    $(".project-entry:last").append(formattedDescription);
+    $(".project-entry:last").append(formattedImage);
   }
 
   for (job in work.jobs) {
@@ -156,6 +171,19 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     $(".education-entry:last").append(formattedDates);
     $(".education-entry:last").append(formattedLocation);
     $(".education-entry:last").append(formattedMajor);
+  }
+
+  $(".education-entry:last").append(HTMLonlineClasses)
+
+  for (something in education.onlineCourses) {
+    var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[something].title);
+    var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[something].school);
+    var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[something].dates);
+    var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[something].url);
+
+    $(".education-entry:last").append(formattedTitle + formattedSchool);
+    $(".education-entry:last").append(formattedDates);
+    $(".education-entry:last").append(formattedURL);
   }
 
 
