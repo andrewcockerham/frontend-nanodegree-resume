@@ -85,7 +85,7 @@ function logClicks(x,y) {
 }
 
 $(document).click(function(loc) {
-  // your code goes here!
+  logClicks(loc.pageX, loc.pageY);
 });
 
 /*
@@ -99,7 +99,7 @@ var map;    // declares a global map variable
 Start here! initializeMap() is called when page is loaded.
 */
 function initializeMap() {
-
+  console.log("initializeMap")
   var locations;
 
   var mapOptions = {
@@ -115,7 +115,7 @@ function initializeMap() {
   written for bio, education, and work.
   */
   function locationFinder() {
-
+    console.log("locationFinder")
     // initializes an empty array
     var locations = [];
 
@@ -133,7 +133,7 @@ function initializeMap() {
     for (var job in work.jobs) {
       locations.push(work.jobs[job].location);
     }
-
+    console.log(locations);
     return locations;
   }
 
@@ -143,37 +143,42 @@ function initializeMap() {
   about a single location.
   */
   function createMapMarker(placeData) {
-
+    console.log(" in createMapMarker")
     // The next lines save location data from the search result object to local variables
-    var lat = placeData.geometry.location.k;  // latitude from the place service
-    var lon = placeData.geometry.location.B;  // longitude from the place service
+    // var lat = placeData.geometry.location.k;  // latitude from the place service
+    // var lon = placeData.geometry.location.B;  // longitude from the place service
+    var lat = placeData.geometry.location.lat();  // latitude from the place service
+    var lon = placeData.geometry.location.lng();  // longitude from the place service
     var name = placeData.formatted_address;   // name of the place from the place service
     var bounds = window.mapBounds;            // current boundaries of the map window
-
+    console.log("make a map marker")
     // marker is an object with additional data about the pin for a single location
     var marker = new google.maps.Marker({
       map: map,
       position: placeData.geometry.location,
       title: name
     });
-
+    console.log("finish markers")
     // infoWindows are the little helper windows that open when you click
     // or hover over a pin on a map. They usually contain more information
     // about a location.
     var infoWindow = new google.maps.InfoWindow({
       content: name
     });
-
+    console.log('after infowindow')
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
       // your code goes here!
     });
-
+    console.log('after addListener')
     // this is where the pin actually gets added to the map.
     // bounds.extend() takes in a map location object
     bounds.extend(new google.maps.LatLng(lat, lon));
+    console.log("after bounds.extend")
+    console.log(bounds)
     // fit the map to the new marker
-    map.fitBounds(bounds);
+    // map.fitBounds(bounds);
+    console.log("after fitBounds")
     // center the map
     map.setCenter(bounds.getCenter());
   }
@@ -184,6 +189,8 @@ function initializeMap() {
   */
   function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
+      console.log("in callback")
+      console.log(results[0])
       createMapMarker(results[0])
     }
   }
@@ -193,7 +200,7 @@ function initializeMap() {
   and fires off Google place searches for each location
   */
   function pinPoster(locations) {
-
+    console.log("pinPoster")
     // creates a Google place search service object. PlacesService does the work of
     // actually searching for location data.
     var service = new google.maps.places.PlacesService(map);
@@ -205,7 +212,7 @@ function initializeMap() {
       var request = {
         query: locations[place]
       }
-
+      // console.log(11)
       // Actually searches the Google Maps API for location data and runs the callback
       // function with the search results after each search.
       service.textSearch(request, callback);
@@ -233,7 +240,7 @@ window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
-//window.addEventListener('resize', function(e) {
+window.addEventListener('resize', function(e) {
   // Make sure the map bounds get updated on page resize
-//  map.fitBounds(mapBounds);
-//});
+ map.fitBounds(mapBounds);
+});

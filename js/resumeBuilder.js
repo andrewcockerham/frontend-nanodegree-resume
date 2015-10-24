@@ -15,7 +15,6 @@ var bio = {
 		"programming", "teaching", "engineering"
 	],
 	"bioPic" : "images/me.jpg"//,
-	//"display" : function() {}
 }
 
 var work = {
@@ -38,7 +37,8 @@ var work = {
 		"employer": "EF English First",
 		"title": "English Teacher",
 		"dates": "2009-2010",
-		"location": "Hangzhou and Tianjin, China",
+		"location": "Hangzhou, China",
+		// "location": "Hangzhou and Tianjin, China",
 		"description": "English Teacher"
 	}
 	]
