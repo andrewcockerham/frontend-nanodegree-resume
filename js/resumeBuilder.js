@@ -14,7 +14,8 @@ var bio = {
 	"skills" : [
 		"programming", "teaching", "engineering"
 	],
-	"bioPic" : "images/me.jpg"//,
+	"bioPic" : "images/me.jpg",
+	display: function(){}
 }
 
 var work = {
@@ -41,7 +42,8 @@ var work = {
 		// "location": "Hangzhou and Tianjin, China",
 		"description": "English Teacher"
 	}
-	]
+	],
+	display: function(){}
 }
 // var work = {}
 // work.position = "Quality Engineer";
@@ -87,7 +89,8 @@ var education = {
 		"dates": 2013,
 		"url": "?"
 	}
-	]
+	],
+	display: function(){}
 }
 
 var projects = {
@@ -110,7 +113,8 @@ var projects = {
 		"description": "Purchasing and Inventory Solution",
 		"image": ["https://s3.amazonaws.com/nanodegreeportfolio/Inventory+image"]
 	}
-	]
+	],
+	display: function(){}
 }
 // $("#main").append(bio.name);
 // $("#main").append(bio.role);
